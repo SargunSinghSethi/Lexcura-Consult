@@ -213,7 +213,7 @@ header {
 }
 
 .mobile-navbar {
-    /* display: none; */
+    display: none;
     width: 0;
     position: fixed;
     height: 100%;
@@ -252,6 +252,7 @@ header {
 }
 
 .openbtn {
+    display: none;
     background-color: #7b5a14;
     border-radius: 100%;
     border: 1px #7b5a14;
@@ -632,6 +633,9 @@ ul li:not(:last-child) {
     }
 
     .mobile-navbar {
+        display: block;
+    }
+    .openbtn {
         display: block;
     }
     
