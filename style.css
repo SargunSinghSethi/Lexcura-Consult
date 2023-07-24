@@ -1,0 +1,652 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:focus { outline: none; }
+
+/* loader */
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    margin: -76px 0 0 -76px;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid rgba(0, 0, 0, 0.274);
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg);}
+    100% { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+.page {
+    display: none;
+    position: relative;
+    -webkit-animation-name: page;
+    -webkit-animation-duration: 1s;
+    animation-name: page;
+    animation-duration: .5ss;
+}
+
+@-webkit-keyframes page {
+    from {
+        bottom: -50px;
+        opacity: 0;
+    } to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes page {
+    from {
+        bottom: -50px;
+        opacity: 0;
+    } to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+
+/* navbar */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 9999;
+    padding: 18px 25px;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo div span img {
+    width: 40px;
+}
+.logo div p {
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+.navbar {
+    background: transparent;
+    display: flex;
+    gap: 12px;
+}
+
+.navbar a {
+    padding: 12px;
+    font-size: large;
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    transition: all 0.4s ease;
+    /* font-weight: 700; */
+}
+
+.navbar a::after,
+.dropdown .dropbtn::after {
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    width: 80%;
+    height: 2px;
+    left: 10%;
+    bottom: 5px;
+    opacity: 0;
+    background: white;
+    transition: all 0.4s ease;
+    pointer-events: none;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.navbar a:hover::after,
+.dropdown .dropbtn:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+    color: white;
+}
+
+.navbar .active:hover::after {
+    transform: scaleX(0);
+    opacity: 0;
+}
+
+.header-sticky {
+    background: rgb(6, 16, 32);
+    padding: 8px 18px;
+}
+
+.navbar-sticky-dropdown {
+    background: rgb(6, 16, 32);
+}
+
+/* dropdown-menu */
+
+.dropdown {
+    position: relative;
+    display: inline;
+}
+
+.dropdown .dropbtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 11px;
+    font-size: large;
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.dropdown-content {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    left: -4px;
+    transition: all 0.4s ease;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+.dropdown-content a {
+    float: none;
+    padding: 12px;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+.mini-widget {
+    color: #ffffff;
+}
+
+.mini-widget>div {
+    display: inline-block;
+}
+
+.mini-widget span img {
+    width: 30px;
+}
+
+.mini-widget p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.mini-widget .phone-call {
+    font-size: 21px;
+}
+
+.mobile-navbar {
+    /* display: none; */
+    width: 0;
+    position: fixed;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    transition: 0.6s;
+    padding-top: 60px;
+}
+
+.mobile-navbar a {
+    padding: 14px;
+    padding-left: 42px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.mobile-navbar a:hover:not(:first-child),
+.mobile-navbar a:focus:not(:first-child) {
+    color: #7b5a14;
+}
+
+.mobile-navbar .closebtn {
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 40px;
+    background-color: #7b5a14;
+    padding: 0 12px;
+}
+
+.openbtn {
+    background-color: #7b5a14;
+    border-radius: 100%;
+    border: 1px #7b5a14;
+    padding: 8px 14px;
+    color: #ffffff;
+}
+
+.openbtn:hover ,
+.openbtn:focus{
+font-size: 20px;
+}
+
+/* backdrop */
+
+.backdrop img {
+    width: 100vw;
+    max-width: 100%;
+    filter: brightness(50%);
+}
+
+.slider {
+    position: absolute;
+    text-align: center;
+    width: 100vw;
+    max-width: 100%;
+    z-index: 1000;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-top: 223px;
+    font-weight: 700;
+    letter-spacing: 0px;
+}
+
+.slider .banner {
+    font-size: 80px;
+    letter-spacing: 4px;
+    line-height: 136px;
+    box-sizing: border-box;
+}
+
+.slider .est {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.slider .est p{
+    height: 40px;
+    width: 80px;
+    font-size: 24px;
+}
+
+.slider .slogan p {
+    font-size: 26px;
+    font-weight:800;
+}
+
+
+.slider-contact {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 3px solid #7b5a14;
+    width: 400px;
+    height: 70px;
+    margin-top: 30px;
+}
+
+.slider-contact div:first-child{
+    color: #7b5a14;
+    font-size: 24px;
+}
+
+.slider-contact div:not(:first-child){
+    font-size: 34px;
+    display: inline-block;
+}
+.slider div span img {
+    width: 85px;
+    filter: brightness(100%);
+}
+
+
+
+/* about us */
+
+#about-us {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7%;
+}
+
+#who-we-are-area , 
+#our-philosophy-area{
+    display: flex;
+    flex-direction: row;
+    width: 100%;    
+    overflow: hidden; 
+}
+
+#who-we-are-area .img-2 ,
+#our-philosophy-area .img-3{
+    width: 100%;
+}
+
+#who-we-are-area .img-2 img,
+#our-philosophy-area .img-3 img{
+    width: 672px;
+    height: 100%;
+} 
+
+#who-we-are-area .content{
+    text-align: justify;
+    padding: 30px 16px;
+}
+
+#our-philosophy-area .content {
+    text-align: justify;
+    padding: 12px 16px;
+    padding-bottom: 0px;
+}
+
+
+#who-we-are-area .content p {
+    padding: 40px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.548);
+}
+
+#our-philosophy-area .content p {
+    padding: 12px 40px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.548);
+    padding-bottom: 0px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.content a {
+    color: white;
+    background: black;
+    padding: 12px 15px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid black ;
+    left: 40px;
+    top: -20px;
+    position: relative;
+}
+
+.content a:hover {
+    color: black;
+    background: white;
+
+}
+
+#our-philosophy-area .list {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    position: relative; 
+    left: 27px;
+    
+}
+
+#our-philosophy-area .list div{
+    padding: 0px 12px;
+}
+
+#our-philosophy-area .list p {
+    text-align: justify;
+    padding: 1px 30px;
+    position: relative;
+    left: 4px;
+}
+
+#our-philosophy-area .list span img{
+    width: 30px;
+    position: relative;
+    top: 10px;
+}
+
+#our-philosophy-area .list h3 {
+    display: inline;
+}
+
+.our-practice-areas {
+    margin-top: 7%;
+}
+
+.container-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    row-gap: 50px;
+}
+
+.practice-items{
+    flex: 0 0 200px;
+    display: flex;
+    height: 82px;
+    align-items: center;
+}
+
+.practice-items:hover > span img {
+    transform: scale(1.3);
+}
+
+.practice-items h3 {
+    position: relative;
+    left: 10%;
+}
+
+.practice-items span img{
+    transition: transform .3s;
+    width: 70px;
+}
+
+.our-practice-areas div p {
+    padding: 40px;
+    width: 60%;
+    margin-left: 20%;
+    text-align: center;
+    line-height: 28px;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.548);
+}
+
+.process-list span img {
+    width: 30px;
+}
+
+.info-process-animate {
+    background: 5px dotted rgba(51, 51, 51, 0.18) ;
+}
+
+.contact {
+    margin-top: 7%;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+}
+
+.info-list {
+    flex: 0 0 200px;
+    text-align: center;
+}
+
+.info-list p {
+    color: rgba(0, 0, 0, 0.548);
+    line-height: 28px;
+    width: 210px;
+}
+
+footer {
+    background: #061020;
+    color: white;
+}
+
+footer>div {
+    padding: 70px 50px 35px 50px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+footer section {
+    margin-bottom: 30px;
+    padding: 0 25px;
+}
+
+footer section ul{
+    list-style-type: none;
+    box-sizing: border-box;
+
+}
+
+.contact-section ul {
+    margin-top: 0;
+}
+
+ul li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.contact-section ul li p{
+    line-height: 28px;
+    color: #8e939a;
+}
+
+.socio span img{
+    width: 30px;
+}
+.socio {
+    padding-left: 40px;
+}
+
+.blog-section>span {
+    font-family: "PT Serif", Helvetica, Arial, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 40px;
+}
+
+.blog-list{
+    line-height: 20px;
+    display: flex;
+}
+
+.blog-list:not(:last-child) {
+    padding: 0 0 15px;
+}
+
+.blog-list a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-list p{
+    color: #8e939a;
+}
+
+.blog-list div span img{
+    border-radius: 50%;
+    transition: all 450ms ease;
+    margin-right: 20px;
+}
+
+.blog-list div span img:hover{
+    filter: brightness(65%);
+}
+
+.bottom-bar {
+    padding: 0 115px 22px 115px;
+    
+}
+
+.bottom-bar>div {
+    border-top: #2b3441 1.5px solid;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;    
+    
+}
+
+.bottom-bar .rights p {
+    font-size: 13px;
+    line-height: 24px;
+    color: #8e939a;
+}
+
+.bottom-bar-logo {
+    color: #8e939a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bottom-bar-logo div span img {
+    width: 40px;
+}
+.bottom-bar-logo div p {
+    font-size: 18px;
+}
+
+
+@media screen and (max-width:1140px){
+    .navbar {
+        display: none;
+    }
+
+    .mobile-navbar {
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width:780px){
+    .mini-widget {
+        display: none;
+    }
+}
+
+@media screen and (max-width:500px){
+    
+}
+
+@media screen and (max-width:380px){
+    
+}
