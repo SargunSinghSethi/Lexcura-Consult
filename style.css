@@ -446,10 +446,12 @@ h2 {
     width: 30px;
     position: relative;
     top: 10px;
+    margin-right: 8px;
 }
 
 #our-philosophy-area .list h3 {
     display: inline;
+    position: absolute;
 }
 
 .our-practice-areas {
@@ -458,7 +460,7 @@ h2 {
 
 .container-flex{
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: wrap;
     justify-content: center;
     gap: 100px;
     row-gap: 50px;
@@ -515,7 +517,6 @@ h2 {
 }
 
 .info-list {
-    flex: 0 0 200px;
     text-align: center;
 }
 
@@ -533,6 +534,7 @@ footer {
 footer>div {
     padding: 70px 50px 35px 50px;
     display: flex;
+    flex-flow: wrap;
     box-sizing: border-box;
 }
 
@@ -610,7 +612,6 @@ ul li:not(:last-child) {
 .bottom-bar>div {
     border-top: #2b3441 1.5px solid;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     width: 100%;    
@@ -715,12 +716,9 @@ ul li:not(:last-child) {
         gap: 53px;
     }
 
-    #our-philosophy-area .list {
-        grid-template-columns: 44% 49%;
-    }
     #our-philosophy-area .list p {
         padding: 0px 18px;
-        left: 16px;
+        left: 20px;
     }
 }
 
@@ -731,15 +729,229 @@ ul li:not(:last-child) {
     }
 }
 
-@media screen and (max-width:780px){
-    .mini-widget {
-        display: none;
+
+@media screen and (max-width:1000px){
+    .slider {
+        margin-top: 140px;
+    }
+    .slider .banner {
+        line-height: 120px;
+    }
+    .slider .slogan p {
+        margin-top: 10px;
+    }
+    .slider-contact {
+        margin-top: 25px;
+    }
+
+    #who-we-are-area .img-2 img, 
+    #our-philosophy-area .img-3 img {
+        width: 480px;
+    }
+
+    .container-flex {
+        gap: 50px;
+    }
+
+    .contact-info {
+        gap: 36px;
+    }
+
+    .info-list span img {
+        width: 100px;
+    }
+    #our-philosophy-area .list {
+        left: 17px;
+    }
+    h2 {
+        font-size: 26px;
     }
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width:950px){
+    #who-we-are-area .img-2 img, 
+    #our-philosophy-area .img-3 img {
+        width: 450px;
+    } 
+    .container-flex {
+        gap: 34px;
+    }
+
+    #our-philosophy-area .list {
+        left: 6px;
+    }
+
+    .contact-info {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width:900px){
+    .slider {
+        margin-top: 140px;
+    }
+    .slider .banner {
+        font-size: 50px;
+        line-height: 90px;
+    }
+    .slider .slogan p {
+        margin-top: 10px;
+    }
+    .slider-contact {
+        margin-top: 16px;
+    }
+    
+    #who-we-are-area .img-2 img, 
+    #our-philosophy-area .img-3 img {
+        width: 430px;
+    }
+    
+    #our-philosophy-area .list{
+        left: 20px;
+    }
+    #our-philosophy-area .list h3 {
+        position: initial;
+        display: contents;
+    }
+    #our-philosophy-area .list p {
+        left: 0px;
+    }
+
+    .container-flex {
+        gap: 17%;
+        row-gap: 50px;
+        margin-top: 4%;
+    }
+    .practice-items span img {
+        width: 80px;
+    }
+    .practice-items h3 {
+        font-size: 20px;
+    }
+    .contact-info {
+        gap: 15%;
+    }
+
+    .our-practice-areas div p {
+        font-size: 17px;
+        width: 70%;
+        margin-left: 17%;
+    }
     
 }
+@media screen and (max-width:850px){
+    .slider .banner {
+        line-height: 70px;
+    }
+    .slider-contact {
+        margin-top: 12px;
+    }
+    #who-we-are-area .img-2 {
+        display: none;
+    }
+    #our-philosophy-area .img-3 img {
+        width: 100vw;
+    }
+    #our-philosophy-area {
+        flex-flow: wrap;
+    }
+    #our-philosophy-area .list {
+        left: 27px;
+    }
+    .bottom-bar {
+        padding: 0 100px 22px 100px;
+    }
+    footer>div {
+        padding: 70px 35px 35px 35px;
+    }
+    #who-we-are-area .content p {
+        padding-top: 5px;
+    }
+}
+@media screen and (max-width:800px){
+    #who-we-are-area .content {
+        padding: 50px 16px;
+    }
+    #about-us {
+        margin: 0;
+    }
+    #our-philosophy-area .content {
+        padding: 50px 0px;
+    }
+    .our-practice-areas div p {
+        width: 72%;
+    }
+    .slider .banner {
+        font-size: 45px;
+    }
+    .slider .slogan p {
+        font-size: 20px;
+    }
+    .slider-contact div:not(:first-child) {
+        font-size: 30px;
+    }
+    .slider-contact {
+        margin-top: 4px;
+        width: 380px;
+        height: 60px;
+    }
+    
+}
+@media screen and (max-width:750px){
+    .mini-widget {
+        display: none;
+    }
+    .slider div span img {
+        width: 65px;
+    }
+    .slider .est p {
+        height: 20px;
+    }
+    .slider .est {
+        gap: 5px;
+    }
+    .slider-contact {
+        margin: 0;
+        width: 349px;
+        height: 52px;
+    }
+    #who-we-are-area .content p ,
+    #our-philosophy-area .content p {
+        font-size: 17px;
+    }
+    #our-philosophy-area .list h3 {
+        font-size: 20px;
+    }
+    .our-practice-areas div p {
+        width: 79%;
+        margin-left: 10%;
+    }
+    .bottom-bar-logo div p {
+        font-size: 16px;
+    }
+    footer>div {
+        padding: 70px 0 35px 0px;
+    }
+    .bottom-bar {
+        padding: 0 10px;
+    }
+    .bottom-bar>div {
+        flex-direction: column;
+    }
+
+    #our-philosophy-area .list {
+        display: block;
+    }
+    #our-philosophy-area .content p {
+        width: 80%;
+        left: 25px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width:700px){
+} 
+
 
 @media screen and (max-width:380px){
     
