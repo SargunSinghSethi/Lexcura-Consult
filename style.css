@@ -71,7 +71,8 @@ header {
     justify-content: space-between;
     position: fixed;
     top: 0%;
-    width: 100%;
+    width: 100vw;
+    max-width: 100%;
     box-sizing: border-box;
     z-index: 9999;
     padding: 18px 25px;
@@ -161,7 +162,7 @@ header {
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 11px;
+    padding: 12px;
     font-size: large;
     color: #ffffff;
     position: relative;
@@ -191,6 +192,15 @@ header {
     opacity: 1;
     pointer-events: auto;
 }
+
+.rightend-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
 .mini-widget {
     color: #ffffff;
 }
@@ -281,7 +291,7 @@ font-size: 20px;
     z-index: 1000;
     color: #FFFFFF;
     font-weight: bold;
-    margin-top: 223px;
+    margin-top: 231px;
     font-weight: 700;
     letter-spacing: 0px;
 }
@@ -363,6 +373,7 @@ font-size: 20px;
 #our-philosophy-area .img-3 img{
     width: 672px;
     height: 100%;
+    object-fit: cover;
 } 
 
 #who-we-are-area .content{
@@ -626,8 +637,55 @@ ul li:not(:last-child) {
     font-size: 18px;
 }
 
+@media screen and (max-width:1340px) {
+    #who-we-are-area .img-2 img,
+    #our-philosophy-area .img-3 img {
+        width: 660px;
+    }
 
-@media screen and (max-width:1140px){
+    #our-philosophy-area .content {
+        padding: 12px 0px;
+    }
+}
+
+@media screen and (max-width:1250px) {
+    #who-we-are-area .img-2 img,
+    #our-philosophy-area .img-3 img {
+        width: 615px;
+    }
+}
+
+@media screen and (max-width:1150px){
+    
+    .slider .banner {
+        font-size: 60px;
+    }
+    .slider div span img {
+        width: 75px;
+    }
+
+    .slider .slogan p {
+        font-size: 22px;
+    }
+
+    #who-we-are-area .img-2 img,
+    #our-philosophy-area .img-3 img {
+        width: 562px;
+    }  
+
+    #our-philosophy-area .list h3 {
+        font-size: 18px;
+    }
+
+    .container-flex ,
+    .contact-info {
+        gap: 80px;
+    }
+    
+    
+}
+
+@media screen and (max-width:1100px){
     .navbar {
         display: none;
     }
@@ -635,10 +693,42 @@ ul li:not(:last-child) {
     .mobile-navbar {
         display: block;
     }
+
     .openbtn {
         display: block;
     }
+
+    .slider {
+        margin-top: 150px;
+    }
+
+    #who-we-are-area .img-2 img,
+    #our-philosophy-area .img-3 img {
+        width: 540px;
+    }
     
+    .container-flex{
+        gap: 60px;
+    }
+
+    .contact-info {
+        gap: 53px;
+    }
+
+    #our-philosophy-area .list {
+        grid-template-columns: 44% 49%;
+    }
+    #our-philosophy-area .list p {
+        padding: 0px 18px;
+        left: 16px;
+    }
+}
+
+@media screen and (max-width:1040px){
+    #who-we-are-area .img-2 img,
+    #our-philosophy-area .img-3 img {
+        width: 500px;
+    }
 }
 
 @media screen and (max-width:780px){
