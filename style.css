@@ -39,7 +39,7 @@ body {
     -webkit-animation-name: page;
     -webkit-animation-duration: 1s;
     animation-name: page;
-    animation-duration: .5ss;
+    animation-duration: .5s;
 }
 
 @-webkit-keyframes page {
@@ -277,10 +277,12 @@ font-size: 20px;
 
 /* backdrop */
 
-.backdrop img {
+.backdrop >img {
     width: 100vw;
     max-width: 100%;
     filter: brightness(50%);
+    height: 800px;
+    object-fit: cover;
 }
 
 .slider {
@@ -650,16 +652,35 @@ ul li:not(:last-child) {
 }
 
 @media screen and (max-width:1250px) {
+    .backdrop >img {
+        height: 750px;
+    }
     #who-we-are-area .img-2 img,
     #our-philosophy-area .img-3 img {
-        width: 615px;
+        width: 600px;
     }
 }
 
+@media screen and (max-width:1200px) {
+    .backdrop >img {
+        height: 700px;
+    }
+    #who-we-are-area .img-2 img, 
+    #our-philosophy-area .img-3 img {
+        width: 575px;
+    }
+}
+
+
+
 @media screen and (max-width:1150px){
+    .backdrop >img {
+        height: 680px;
+    }
     
     .slider .banner {
         font-size: 60px;
+        line-height: 100px;
     }
     .slider div span img {
         width: 75px;
@@ -671,7 +692,7 @@ ul li:not(:last-child) {
 
     #who-we-are-area .img-2 img,
     #our-philosophy-area .img-3 img {
-        width: 562px;
+        width: 552px;
     }  
 
     #our-philosophy-area .list h3 {
@@ -687,6 +708,9 @@ ul li:not(:last-child) {
 }
 
 @media screen and (max-width:1100px){
+    .backdrop >img {
+        height: 800px;
+    }
     .navbar {
         display: none;
     }
@@ -694,18 +718,16 @@ ul li:not(:last-child) {
     .mobile-navbar {
         display: block;
     }
+    .slider-contact div:not(:first-child) {
+        font-size: 30px;
+    }
 
     .openbtn {
         display: block;
     }
-
-    .slider {
-        margin-top: 150px;
-    }
-
     #who-we-are-area .img-2 img,
     #our-philosophy-area .img-3 img {
-        width: 540px;
+        width: 530px;
     }
     
     .container-flex{
@@ -722,28 +744,31 @@ ul li:not(:last-child) {
     }
 }
 
-@media screen and (max-width:1040px){
+@media screen and (max-width:1050px){
     #who-we-are-area .img-2 img,
     #our-philosophy-area .img-3 img {
         width: 500px;
     }
+
 }
 
 
 @media screen and (max-width:1000px){
     .slider {
-        margin-top: 140px;
+        margin-top: 231px;
     }
     .slider .banner {
         line-height: 120px;
     }
     .slider .slogan p {
-        margin-top: 10px;
+        font-size: 21px;
     }
-    .slider-contact {
-        margin-top: 25px;
+    .slider .est p {
+        font-size: 26px;
     }
-
+    .slider-contact div:not(:first-child) {
+        font-size: 34px;
+    }
     #who-we-are-area .img-2 img, 
     #our-philosophy-area .img-3 img {
         width: 480px;
@@ -788,19 +813,28 @@ ul li:not(:last-child) {
 
 @media screen and (max-width:900px){
     .slider {
-        margin-top: 140px;
+        margin-top: 231px;
     }
     .slider .banner {
-        font-size: 50px;
-        line-height: 90px;
+        font-size: 55px;
     }
     .slider .slogan p {
-        margin-top: 10px;
+        margin-top: 24px;
+        font-size: 24px;
     }
-    .slider-contact {
-        margin-top: 16px;
+    .slider .est{
+        align-items: center;
     }
-    
+    .slider .est p {
+        font-size: 22px;
+        height: 35px;
+    }
+    .slider-contact div:first-child {
+        font-size: 22px;
+    }
+    .slider-contact div:not(:first-child) {
+        font-size: 30px;
+    }
     #who-we-are-area .img-2 img, 
     #our-philosophy-area .img-3 img {
         width: 430px;
@@ -841,10 +875,20 @@ ul li:not(:last-child) {
 }
 @media screen and (max-width:850px){
     .slider .banner {
-        line-height: 70px;
+        font-size: 50px;
     }
     .slider-contact {
         margin-top: 12px;
+        border: 2px solid #7b5a14;
+        width: 365px;
+        height: 57px;
+    }
+    .slider .slogan p {
+        margin-top: 12px;
+        font-size: 22px;
+    }
+    .backdrop >img {
+        height: 680px;
     }
     #who-we-are-area .img-2 {
         display: none;
@@ -882,18 +926,7 @@ ul li:not(:last-child) {
         width: 72%;
     }
     .slider .banner {
-        font-size: 45px;
-    }
-    .slider .slogan p {
-        font-size: 20px;
-    }
-    .slider-contact div:not(:first-child) {
-        font-size: 30px;
-    }
-    .slider-contact {
-        margin-top: 4px;
-        width: 380px;
-        height: 60px;
+        line-height: 115px;
     }
     
 }
@@ -902,7 +935,7 @@ ul li:not(:last-child) {
         display: none;
     }
     .slider div span img {
-        width: 65px;
+        width: 90px;
     }
     .slider .est p {
         height: 20px;
@@ -941,6 +974,7 @@ ul li:not(:last-child) {
 
     #our-philosophy-area .list {
         display: block;
+        left: 40px;
     }
     #our-philosophy-area .content p {
         width: 80%;
@@ -949,10 +983,99 @@ ul li:not(:last-child) {
     }
 }
 
+@media screen and (max-width:750px){
+    .slider .banner {
+        letter-spacing: 2px;
+        font-size: 48px;
+    }
+    .slider .slogan p {
+        font-size: 21px;
+    }
+} 
+
 @media screen and (max-width:700px){
+    .slider .banner {
+        font-size: 45px;
+    }
+    .slider .slogan p {
+        font-size: 20px;
+        margin: 0;
+    }
+    .backdrop >img {
+        height: 690px;
+    }
+    .slider-contact div:not(:first-child) {
+        font-size: 28px;
+    }
+    .slider-contact { 
+        margin-top: 35px;
+    }
+    .slider div span img {
+        width: 75px;
+    }
+    .slider .est p {
+        font-size: 20px;
+    }
+    .openbtn {
+        padding: 1px 7px;
+    }
 } 
 
 
+@media screen and (max-width:650px){
+    .backdrop >img {
+        height: 750px;
+    }
+    .slider .banner {
+        font-size: 63px;
+        line-height: 80px;
+        margin-top: 16px;
+        letter-spacing: 4px;
+    }
+    .slider .slogan p {
+        margin-top: 18px;
+        font-size: 18px;
+    }
+    h2 {
+        margin-bottom: 24px;
+    }
+    .container-flex {
+        margin-top: 7%;
+    }
+    .contact-info {
+        margin-top: 6%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .slider .banner {
+        font-size: 58px;
+        letter-spacing: 3px;
+    }
+    .slider .slogan p {
+        margin-top: 18px;
+        font-size: 16px;
+    }
+    .slider-contact div:not(:first-child) {
+        font-size: 24px;
+    }
+    .slider-contact {
+        width: 300px;
+        height: 45px;
+    }
+    .slider div span img {
+        width: 65px;
+    }
+    .slider .est {
+        gap: 0px;
+    }
+    .slider .est p {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:550px){
+    
+}
 @media screen and (max-width:380px){
     
 }
